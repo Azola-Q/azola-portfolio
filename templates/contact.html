@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Azola Qakaqu - Contact{% endblock %}
+{% block content %}
+<section class="project-section p-4 my-5 text-white text-center">
+    <h2 class="mb-4">Contact Me</h2>
+    <p>Reach out to discuss opportunities or collaborations!</p>
+    <ul class="list-unstyled">
+        <li>Email: <a class="text-white" href="mailto:azolaqakaqu@gmail.com">azolaqakaqu@gmail.com</a></li>
+        <li>Phone: <a class="text-white" href="tel:+27784769721">078 476 9721</a></li>
+        <li>LinkedIn: <a class="text-white" href="https://linkedin.com/in/azola-qakaqu" target="_blank">azola-qakaqu</a></li>
+    </ul>
+
+    <h3 class="mt-5">Send a Message</h3>
+    <p class="fst-italic text-light">“Let’s build solutions that matter — together.”</p>
+    <form method="post" class="mt-4 mx-auto contact-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control mx-auto" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control mx-auto" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control mx-auto" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

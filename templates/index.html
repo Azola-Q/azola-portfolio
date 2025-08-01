@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Azola Qakaqu - Home{% endblock %}
+
+{% block content %}
+<section class="profile-section text-center my-5 p-4">
+    <div class="image-frame mb-4">
+        <img src="{{ url_for('static', filename='images/Azola.jpeg') }}" alt="Azola Qakaqu Profile Picture" class="profile-img shadow">
+    </div>
+    <h2 class="display-5 text-white">Welcome to My Portfolio</h2>
+    <p class="lead text-light">
+        I'm Azola Qakaqu, an IT Programming and Technical Support Professional based in Cape Town.<br>
+        I craft innovative solutions using Python, Java, front-end technologies, and no-code platforms.
+    </p>
+    <a href="{{ url_for('projects') }}" class="btn btn-outline-light btn-lg mt-3">View My Projects</a>
+</section>
+
+{% endblock %}
