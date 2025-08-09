@@ -409,7 +409,7 @@ footer a:hover {
 .navbar-brand span {
   display: inline-block;
   transform: translateX(-100%);
-  animation: slideInFromRight 0.8s forwards ease-out 0.4s; /* delay for smooth effect */
+  animation: slideInFromLeft 0.8s forwards ease-out 0.4s; /* delay for smooth effect */
   will-change: transform;
 }
 
