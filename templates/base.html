@@ -1,96 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Azola Qakaqu, Programming & IT Support Specialist">
-    <meta name="keywords" content="Azola Qakaqu, Python, Java, IT Support, AI, No-Code, Portfolio">
-    <meta name="author" content="Azola Qakaqu">
-    <title>{% block title %}Azola Qakaqu - Portfolio{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-pb3U5IqgVf5b7Bla2dkqc6+cMe/N8evMDGZPmRe2Jq1GzF5bEjxRjpyAaz8yQ6NkDpL6+Dp5Yd76fZ8G4G4Zgw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Azola Qakaqu, Programming & IT Support Specialist" />
+  <meta name="keywords" content="Azola Qakaqu, Python, Java, IT Support, AI, No-Code, Portfolio" />
+  <meta name="author" content="Azola Qakaqu" />
+  <title>{% block title %}Azola Qakaqu - Portfolio{% endblock %}</title>
+
+  <!-- Preconnect to improve font loading if you add Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoI5vCzYNENbAlOGpgi9oYV+kF5RsANm1zU5Nn0f1p+2j2y"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pb3U5IqgVf5b7Bla2dkqc6+cMe/N8evMDGZPmRe2Jq1GzF5bEjxRjpyAaz8yQ6NkDpL6+Dp5Yd76fZ8G4G4Zgw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* Fade in body on load for smooth initial appearance */
+    body {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 🔴 Background Video -->
-    <video autoplay muted loop id="bg-video" preload="auto" playsinline>
-        <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+  <!-- 🔴 Background Video -->
+  <video
+    autoplay
+    muted
+    loop
+    id="bg-video"
+    preload="auto"
+    playsinline
+    aria-label="Background video"
+  >
+    <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
 
-
-    <!-- ✅ Navigation Header -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-custom shadow-sm">
-        <div class="container-fluid d-flex align-items-center justify-content-between">
-            <!-- Logo + Name + Title -->
-            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Azola Logo" class="rounded-circle me-2" width="45" height="45">
-                <div class="d-flex flex-column">
-                    <span class="fw-bold">Azola Qakaqu</span>
-                    <small class="text-light" style="font-size: 0.8rem;">IT Programming & Tech Support Professional</small>
-                </div>
-            </a>
-
-            <!-- Nav Menu -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link {{ 'active' if request.path == '/' else '' }}" href="{{ url_for('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ 'active' if request.path == '/about' else '' }}" href="{{ url_for('about') }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ 'active' if request.path == '/projects' else '' }}" href="{{ url_for('projects') }}">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ 'active' if request.path == '/contact' else '' }}" href="{{ url_for('contact') }}">Contact</a>
-                    </li>
-                </ul>
-            </div>
+  <!-- ✅ Navigation Header -->
+  <header
+    class="navbar navbar-expand-lg navbar-dark bg-custom shadow-sm"
+    role="banner"
+  >
+    <div
+      class="container-fluid d-flex align-items-center justify-content-between"
+    >
+      <!-- Logo + Name + Title -->
+      <a
+        class="navbar-brand d-flex align-items-center"
+        href="{{ url_for('home') }}"
+        aria-label="Go to home page"
+      >
+        <img
+          src="{{ url_for('static', filename='images/logo.jpg') }}"
+          alt="Azola Logo"
+          class="rounded-circle me-2"
+          width="45"
+          height="45"
+          loading="lazy"
+        />
+        <div class="d-flex flex-column">
+          <span class="fw-bold">Azola Qakaqu</span>
+          <small class="text-light" style="font-size: 0.8rem;"
+            >IT Programming & Tech Support Professional</small
+          >
         </div>
-    </header>
+      </a>
 
-    <!-- ✅ Main Content -->
-    <main class="container my-5 flex-grow-1">
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {% for message in messages %}
-                        {{ message }}
-                    {% endfor %}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-    </main>
+      <!-- Nav Menu -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- ✅ Footer -->
-<footer>
+      <nav
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+        role="navigation"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link {{ 'active' if request.path == '/' else '' }}"
+              href="{{ url_for('home') }}"
+              aria-current="{{ 'page' if request.path == '/' else 'false' }}"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {{ 'active' if request.path == '/about' else '' }}"
+              href="{{ url_for('about') }}"
+              aria-current="{{ 'page' if request.path == '/about' else 'false' }}"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {{ 'active' if request.path == '/projects' else '' }}"
+              href="{{ url_for('projects') }}"
+              aria-current="{{ 'page' if request.path == '/projects' else 'false' }}"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {{ 'active' if request.path == '/contact' else '' }}"
+              href="{{ url_for('contact') }}"
+              aria-current="{{ 'page' if request.path == '/contact' else 'false' }}"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <main class="container my-5 flex-grow-1" role="main">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      {% for message in messages %}
+      {{ message }}
+      {% endfor %}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close alert"
+      ></button>
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer role="contentinfo">
     <p>© 2025 <b>Azola Qakaqu</b> | Built with Flask & Bootstrap.</p>
     <p>
-        <a href="https://linkedin.com/in/azola-qakaqu" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/Azola-Q" target="_blank">GitHub</a>
+      <a
+        href="https://linkedin.com/in/azola-qakaqu"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn</a
+      >
+      |
+      <a
+        href="https://github.com/Azola-Q"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
     </p>
-</footer>
+  </footer>
 
-    <!-- Back to top buttons -->
-    <button id="back-to-top-primary" class="btn btn-primary back-to-top" title="Back to Top">↑</button>
+  <!-- Back to top button -->
+  <button
+    id="back-to-top-primary"
+    class="btn btn-primary back-to-top"
+    title="Back to Top"
+    aria-label="Scroll back to top"
+  >
+    ↑
+  </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoI5vCzYNENbAlOGpgi9oYV+kF5RsANm1zU5Nn0f1p+2j2y"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+  <script>
+    // On page load fade in the body
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+
+      // Optionally add animate-on-scroll to main container for initial fade
+      document.querySelectorAll('main.container, section, .card').forEach(el => {
+        el.classList.add('animate-on-scroll');
+      });
+    });
+  </script>
 </body>
 </html>
