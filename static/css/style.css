@@ -409,11 +409,11 @@ footer a:hover {
 .navbar-brand span {
   display: inline-block;
   transform: translateX(-100%);
-  animation: slideInFromLeft 0.8s forwards ease-out 0.4s; /* delay for smooth effect */
+  animation: slideInFromRight 0.8s forwards ease-out 0.4s; /* delay for smooth effect */
   will-change: transform;
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideInFromRight {
   to {
     transform: translateX(0);
   }
@@ -428,6 +428,5 @@ footer a:hover {
 .btn-primary:focus {
   transform: scale(1.05);
   box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
-  /* Color remains unchanged */
 }
 
