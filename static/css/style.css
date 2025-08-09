@@ -431,13 +431,13 @@ footer a:hover {
 }
 /* Glow effect on entire navbar when hovered (including empty space) */
 .navbar:hover {
-  box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
-  transition: box-shadow 0.9s ease-in-out;
+  box-shadow: 0 0 15px 4px rgba(255, 215, 0, 0.3);
+  transition: box-shadow 0.4s ease-in-out;
   z-index: 1050; /* make sure it stays above other content */
 }
 
 /* Smooth transition for navbar normally */
 .navbar {
-  transition: box-shadow 0.9s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
 }
 
