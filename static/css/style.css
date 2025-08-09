@@ -378,3 +378,56 @@ footer a:hover {
     filter: brightness(1.05);
     transition: filter 0.3s ease;
 }
+/* Breathing effect for navbar links */
+.navbar-nav .nav-link {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}
+
+/* Breathing effect for logo image */
+.navbar-brand img {
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.navbar-brand img:hover,
+.navbar-brand img:focus {
+  transform: scale(1.12);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Slide-in animation for title text in navbar */
+.navbar-brand span {
+  display: inline-block;
+  transform: translateX(-100%);
+  animation: slideInFromLeft 0.8s forwards ease-out 0.4s; /* delay for smooth effect */
+  will-change: transform;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Add subtle hover effect for buttons without changing color */
+.btn-primary {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
+  /* Color remains unchanged */
+}
+
