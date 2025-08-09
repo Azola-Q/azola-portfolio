@@ -3,7 +3,7 @@
 {% block title %}Azola Qakaqu - Home{% endblock %}
 
 {% block content %}
-<section class="profile-section text-center my-5 p-4">
+<section class="profile-section animate-on-scroll text-center my-5 p-4">
     <div class="image-frame mb-4">
         <img src="{{ url_for('static', filename='images/azola.jpeg') }}" alt="Azola Qakaqu Profile Picture" class="profile-img shadow">
     </div>
@@ -14,5 +14,4 @@
     </p>
     <a href="{{ url_for('projects') }}" class="btn btn-outline-light btn-lg mt-3">View My Projects</a>
 </section>
-
 {% endblock %}
