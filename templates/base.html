@@ -9,13 +9,8 @@
     <title>{% block title %}Azola Qakaqu - Portfolio{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-pb3U5IqgVf5b7Bla2dkqc6+cMe/N8evMDGZPmRe2Jq1GzF5bEjxRjpyAaz8yQ6NkDpL6+Dp5Yd76fZ8G4G4Zgw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pb3U5IqgVf5b7Bla2dkqc6+cMe/N8evMDGZPmRe2Jq1GzF5bEjxRjpyAaz8yQ6NkDpL6+Dp5Yd76fZ8G4G4Zgw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -88,7 +83,8 @@
 </footer>
 
     <!-- Back to Top Button -->
-<button id="back-to-top-primary" class="btn btn-primary back-to-top" title="Back to Top">↑</button>
+<button id="back-to-top-primary" class="btn btn-primary back-to-top" title="Back to Top"> <i class="fas fa-chevron-up"></i> </button>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
