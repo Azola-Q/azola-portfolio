@@ -402,7 +402,7 @@ footer a {
     text-decoration: none;
     margin: 0 5px;
     transition: text-shadow 0.3s ease, color 0.3s ease;
-    position: relative;
+    position: fixed;
 }
 
 /* Glow on hover */
