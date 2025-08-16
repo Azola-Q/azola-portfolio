@@ -17,17 +17,18 @@
     </h2>
 
     <!-- Modernized Lead Text -->
-    <p class="lead text-light animate-fade">
-        A <b>Programming & Technical Support Professional</b> from Cape Town.<br>
-        Passionate about building <span class="highlight">efficient apps</span>, 
-        automating tasks with <span class="highlight">Python</span>, 
-        and crafting modern web experiences with <span class="highlight">front-end tech</span> & <span class="highlight">no-code tools</span>.
+   <p class="lead text-light animate-fade text-center">
+    A <b>Programming & Technical Support Professional</b> based in Cape Town.<br> 
+    Passionate about building <span class="highlight">efficient applications</span>,  
+    automating workflows with <span class="highlight">Python</span>,  
+    managing data with <span class="highlight">MySQL</span>,  
+    and crafting modern web experiences using <span class="highlight">front-end technologies</span> and <span class="highlight">no-code tools</span>. 
     </p>
 
     <!-- Call to Action -->
     <a href="{{ url_for('projects') }}" 
        class="btn btn-outline-light btn-lg mt-3 hover-pop">
-       🚀 View My Projects
+        View My Projects
     </a>
 </section>
 
@@ -73,13 +74,5 @@
     }
 }
 
-/* Hover effect on button */
-.hover-pop {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.hover-pop:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
-}
 </style>
 {% endblock %}
