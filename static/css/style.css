@@ -120,25 +120,6 @@ main.container {
     transform: scale(1.05);
 }
 
-/* 🔵 Back-to-Top Button (Right Only) */
-.back-to-top {
-    position: fixed;
-    display: none;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    line-height: 1;
-    text-align: center;
-    z-index: 1000;
-    opacity: 0.8;
-    transition: opacity 0.3s, transform 0.3s;
-}
-.back-to-top:hover {
-    opacity: 1;
-    transform: scale(1.1);
 }
 
 /* 🔵 Footer */
@@ -214,51 +195,6 @@ footer a:hover {
     .navbar-brand small {
         text-align: left;
     }
-
-    .back-to-top {
-        bottom: 15px;
-        width: 35px;
-        height: 35px;
-        font-size: 1.2rem;
-        right: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .lead {
-        font-size: 1rem;
-    }
-
-    .back-to-top {
-        bottom: 10px;
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-        right: 10px;
-    }
-}
-
-/* 🔵 Animations */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes bounceIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes bounce {
-    from { transform: translateY(0); }
-    to { transform: translateY(-5px); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
 
 .about-section {
     background-color: rgba(138, 164, 192, 0.9); /* match header/footer */
@@ -502,4 +438,65 @@ footer a:hover::after {
         height: auto;
         padding: 15px 10px;
     }
+}
+/* 🔝 Back-to-Top Button */
+.back-to-top {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-align: center;
+    z-index: 1000;
+    background: #0d6efd; /* bootstrap primary */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    opacity: 0.85;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: pulseGlow 2s infinite;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* 🔁 Responsiveness */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* ✨ Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 🔵 Glow Pulse Animation */
+@keyframes pulseGlow {
+    0%   { box-shadow: 0 0 6px rgba(13, 110, 253, 0.5); }
+    50%  { box-shadow: 0 0 15px rgba(13, 110, 253, 0.9); }
+    100% { box-shadow: 0 0 6px rgba(13, 110, 253, 0.5); }
 }
