@@ -4,15 +4,82 @@
 
 {% block content %}
 <section class="profile-section text-center my-5 p-4">
+    <!-- Profile Image Frame -->
     <div class="image-frame mb-4">
-        <img src="{{ url_for('static', filename='images/azola.jpeg') }}" alt="Azola Qakaqu Profile Picture" class="profile-img shadow">
+        <img src="{{ url_for('static', filename='images/azola.jpeg') }}" 
+             alt="Azola Qakaqu Profile Picture" 
+             class="profile-img shadow">
     </div>
-    <h2 class="display-5 text-white">Welcome to My Portfolio</h2>
-    <p class="lead text-light">
-        I'm Azola Qakaqu, an IT Programming and Technical Support Professional based in Cape Town.<br>
-        I craft innovative solutions using Python, Java, front-end technologies, and no-code platforms.
+
+    <!-- Animated Heading -->
+    <h2 class="display-5 text-white fw-bold animate-slide">
+        Hi, I'm <span class="text-glow">Azola Qakaqu</span>
+    </h2>
+
+    <!-- Modernized Lead Text -->
+    <p class="lead text-light animate-fade">
+        A <b>Programming & Technical Support Professional</b> from Cape Town.<br>
+        Passionate about building <span class="highlight">efficient apps</span>, 
+        automating tasks with <span class="highlight">Python</span>, 
+        and crafting modern web experiences with <span class="highlight">front-end tech</span> & <span class="highlight">no-code tools</span>.
     </p>
-    <a href="{{ url_for('projects') }}" class="btn btn-outline-light btn-lg mt-3">View My Projects</a>
+
+    <!-- Call to Action -->
+    <a href="{{ url_for('projects') }}" 
+       class="btn btn-outline-light btn-lg mt-3 hover-pop">
+       🚀 View My Projects
+    </a>
 </section>
 
+<!-- Extra Styles -->
+<style>
+/* Glow for name */
+.text-glow {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Highlighted keywords */
+.highlight {
+    font-weight: 600;
+    color: #eaeaea;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 2px;
+}
+
+/* Animations */
+.animate-slide {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease forwards;
+}
+
+.animate-fade {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover effect on button */
+.hover-pop {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hover-pop:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+</style>
 {% endblock %}
