@@ -1,29 +1,37 @@
+// 🔹 Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
-// Show/hide back-to-top buttons based on scroll position
-const backToTopPrimary = document.getElementById('back-to-top-primary');
-const backToTopSecondary = document.getElementById('back-to-top-secondary');
+// 🔹 Back-to-Top Button
+const backToTopBtn = document.getElementById('back-to-top-primary');
+
+// Show/hide button with fade effect
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        backToTopPrimary.style.display = 'block';
-        backToTopSecondary.style.display = 'block';
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+        backToTopBtn.style.opacity = '1';
     } else {
-        backToTopPrimary.style.display = 'none';
-        backToTopSecondary.style.display = 'none';
+        backToTopBtn.style.opacity = '0';
+        setTimeout(() => { backToTopBtn.style.display = 'none'; }, 300);
     }
 });
 
-// Smooth scroll to top when either button is clicked
-backToTopPrimary.addEventListener('click', () => {
+// Smooth scroll to top when clicked
+backToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-backToTopSecondary.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Optional: Add a hover glow effect
+backToTopBtn.addEventListener('mouseenter', () => {
+    backToTopBtn.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.8)';
+});
+backToTopBtn.addEventListener('mouseleave', () => {
+    backToTopBtn.style.boxShadow = 'none';
 });
