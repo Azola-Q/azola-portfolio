@@ -120,8 +120,6 @@ main.container {
     transform: scale(1.05);
 }
 
-}
-
 /* 🔵 Footer */
 footer {
     height: 56px;
@@ -190,7 +188,7 @@ footer a:hover {
     .navbar-nav {
         text-align: center;
     }
-
+}
     .navbar-brand span,
     .navbar-brand small {
         text-align: left;
@@ -440,14 +438,62 @@ footer a:hover::after {
     }
 }
 /* 🔵 Back-to-Top Button (Right Only) */ 
-.back-to-top { position: fixed; display: none; bottom: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; line-height: 1; text-align: center; z-index: 1000; opacity: 0.8; transition: opacity 0.3s, transform 0.3s; }
-.back-to-top:hover { opacity: 1; transform: scale(1.1); }
-.back-to-top { bottom: 15px; width: 35px; height: 35px; font-size: 1.2rem; right: 15px; } } 
+.back-to-top {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.back-to-top:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.back-to-top {
+    bottom: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    right: 15px;
+} 
 @media (max-width: 480px) { 
-.lead { font-size: 1rem; }
-.back-to-top { bottom: 10px; width: 30px; height: 30px; font-size: 1rem; right: 10px; } } 
+.lead {
+    font-size: 1rem;
+}
+.back-to-top {
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    right: 10px;
+} 
+} 
 /* 🔵 Animations */ 
-@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } } 
-@keyframes bounceIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } } 
-@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-5px); } } 
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes fadeInDown {
+    from { opacity: 0;
+          transform: translateY(-20px); }
+    to { opacity: 1;
+        transform: translateY(0); } 
+} 
+@keyframes bounceIn {
+    from { opacity: 0;
+          transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+} 
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+} 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
