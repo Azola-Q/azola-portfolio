@@ -87,10 +87,27 @@
     </p>
 </footer>
 
-    <!-- Back to top buttons -->
-    <button id="back-to-top-primary" class="btn btn-primary back-to-top" title="Back to Top">↑</button>
+    <!-- 🔝 Back to Top Button -->
+<button id="back-to-top-primary" 
+        class="btn btn-primary back-to-top" 
+        title="Back to Top"
+        aria-label="Scroll back to top">
+    ↑
+</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    // 🔝 Show/Hide + Scroll to Top
+const backToTopBtn = document.getElementById("back-to-top-primary");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
 </body>
 </html>
