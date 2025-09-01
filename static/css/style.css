@@ -173,15 +173,37 @@ main.container {
     color: white;
 }
 .collapsible-content {
-    max-height: 0;           /* Hidden by default */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    padding: 0 0;            /* No padding when hidden */
+    padding: 0 0;
 }
 
 .collapsible-content.open {
-    max-height: 500px;       /* Adjust based on content height */
-    padding: 10px 0;         /* Add padding when open */
+    max-height: 500px;
+    padding: 10px 0;
+}
+
+/* Button styling */
+#aboutToggle {
+    color: white;           /* White text */
+    font-weight: bold;
+    animation: breathe 1.5s ease-in-out infinite;
+    border-radius: 10px;
+}
+
+/* Breathing animation */
+@keyframes breathe {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+}
+
+/* Typewriter effect */
+.typewriter-text {
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .project-section {
     background-color: rgba(138, 164, 192, 0.9); /* Match navbar/footer */
