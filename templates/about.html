@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 {% block title %}Azola Qakaqu - About{% endblock %}
 {% block content %}
+
 <section class="about-section p-4 my-5 text-white">
     <h2 class="mb-4">About Me</h2>
-    <p>I am a dedicated IT programming and Support professional based in Cape Town, specializing in Python, Java, front-end development, and no-code solutions. My passion is building efficient, user-friendly tools to solve real-world challenges.</p>
+
+    <!-- Toggle Button -->
+    <button class="btn btn-info mb-3" id="aboutToggle">Show About Me</button>
+    <!-- Collapsible Content -->
+    <div id="aboutContent" style="display: none;">
+        <p>
+            I am a dedicated IT programming and Support professional based in Cape Town, 
+            specializing in Python, Java, front-end development, and no-code solutions. 
+            My passion is building efficient, user-friendly tools to solve real-world challenges.
+        </p>
+    </div>
+</section>
 
     <h3 class="mt-5">Education</h3>
     <div class="card mb-3">
@@ -222,4 +234,19 @@
 </div>
 
 </section>
+
+<script>
+    const toggleButton = document.getElementById('aboutToggle');
+    const aboutContent = document.getElementById('aboutContent');
+
+    toggleButton.addEventListener('click', () => {
+        if (aboutContent.style.display === 'none') {
+            aboutContent.style.display = 'block';
+            toggleButton.textContent = 'Hide About Me';
+        } else {
+            aboutContent.style.display = 'none';
+            toggleButton.textContent = 'Show About Me';
+        }
+    });
+</script>
 {% endblock %}
