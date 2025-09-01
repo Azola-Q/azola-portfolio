@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scrolling for anchor links
@@ -61,4 +60,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-</script>
