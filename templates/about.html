@@ -12,7 +12,7 @@
 
     <!-- Collapsible Content -->
     <div id="aboutContent" class="collapsible-content">
-        <p>
+        <p id="typewriterText">
             I am a dedicated IT programming and Support professional based in Cape Town, 
             specializing in Python, Java, front-end development, and no-code solutions. 
             My passion is building efficient, user-friendly tools to solve real-world challenges.
@@ -239,18 +239,33 @@
 </section>
 
 <script>
-    const toggleButton = document.getElementById('aboutToggle');
-    const aboutContent = document.getElementById('aboutContent');
+const toggleButton = document.getElementById('aboutToggle');
+const aboutContent = document.getElementById('aboutContent');
+const typewriterText = document.getElementById('typewriterText');
+let originalText = typewriterText.textContent;
 
-    toggleButton.addEventListener('click', () => {
-        aboutContent.classList.toggle('open');
+// Clear content initially for typewriter
+typewriterText.textContent = '';
 
-        // Update button text
-        if (aboutContent.classList.contains('open')) {
-            toggleButton.textContent = 'Retract Bio';
-        } else {
-            toggleButton.textContent = 'Launch Bio';
-        }
-    });
+toggleButton.addEventListener('click', () => {
+    aboutContent.classList.toggle('open');
+
+    // Update button text
+    if (aboutContent.classList.contains('open')) {
+        toggleButton.textContent = 'Retract Bio';
+        typeWriter(originalText);
+    } else {
+        toggleButton.textContent = 'Launch Bio';
+        typewriterText.textContent = ''; // reset when retracting
+    }
+});
+
+// Typewriter function
+function typeWriter(text, i = 0) {
+    if (i < text.length) {
+        typewriterText.textContent += text.charAt(i);
+        setTimeout(() => typeWriter(text, i + 1), 30); // Adjust speed here
+    }
+}
 </script>
 {% endblock %}
