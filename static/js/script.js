@@ -15,3 +15,32 @@ backToTopPrimary.addEventListener('click', () => {
 });
 backToTopSecondary.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });});
+
+const toggleButton = document.getElementById('aboutToggle');
+const aboutContent = document.getElementById('aboutContent');
+const typewriterText = document.getElementById('typewriterText');
+let originalText = typewriterText.textContent;
+
+// Clear content initially for typewriter
+typewriterText.textContent = '';
+
+toggleButton.addEventListener('click', () => {
+    aboutContent.classList.toggle('open');
+
+    // Update button text
+    if (aboutContent.classList.contains('open')) {
+        toggleButton.textContent = 'Retract Bio';
+        typeWriter(originalText);
+    } else {
+        toggleButton.textContent = 'Launch Bio';
+        typewriterText.textContent = ''; // reset when retracting
+    }
+});
+
+// Typewriter function
+function typeWriter(text, i = 0) {
+    if (i < text.length) {
+        typewriterText.textContent += text.charAt(i);
+        setTimeout(() => typeWriter(text, i + 1), 30); // Adjust typing speed
+    }
+}
