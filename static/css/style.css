@@ -190,10 +190,13 @@ main.container {
 
 /* Typewriter Text */
 #typewriterText {
-    display: inline-block;
-    border-right: 2px solid white; /* cursor */
-    white-space: pre-wrap;         /* allow wrapping */
-    overflow: hidden;              /* still hides cursor overflow */
+    display: inline-block;       /* keeps the typewriter cursor effect */
+    border-right: 2px solid white;
+    white-space: pre-wrap;       /* allows wrapping */
+    overflow: hidden;            /* keeps cursor neat */
+    word-wrap: break-word;       /* breaks long words if needed */
+    width: 100%;                 /* full width of parent container */
+    box-sizing: border-box;      /* include padding in width */
 }
 
 /* About Me Button */
