@@ -194,7 +194,6 @@ main.container {
     border-right: 2px solid white; /* cursor */
     white-space: pre-wrap;         /* allow wrapping */
     overflow: hidden;              /* still hides cursor overflow */
-    word-wrap: break-word;         /* break long words if needed */
 }
 
 /* About Me Button */
