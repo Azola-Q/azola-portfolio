@@ -1,60 +1,29 @@
-<script>
-document.addEventListener('DOMContentLoaded', () => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
+    anchor.addEventListener('click', function(e) { 
+        e.preventDefault(); 
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); 
+    }); 
+}); 
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
-        anchor.addEventListener('click', function(e) { 
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); 
-        }); 
-    });
+// Show/hide back-to-top buttons based on scroll position
+const backToTopPrimary = document.getElementById('back-to-top-primary'); 
+const backToTopSecondary = document.getElementById('back-to-top-secondary'); 
 
-    // Back-to-top buttons
-    const backToTopPrimary = document.getElementById('back-to-top-primary');
-    const backToTopSecondary = document.getElementById('back-to-top-secondary');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) { 
-            backToTopPrimary.style.display = 'block';
-            backToTopSecondary.style.display = 'block';
-        } else { 
-            backToTopPrimary.style.display = 'none';
-            backToTopSecondary.style.display = 'none'; 
-        } 
-    });
+window.addEventListener('scroll', () => { 
+    if (window.scrollY > 100) { 
+        backToTopPrimary.style.display = 'block'; 
+        backToTopSecondary.style.display = 'block'; 
+    } else { 
+        backToTopPrimary.style.display = 'none'; 
+        backToTopSecondary.style.display = 'none'; 
+    } 
+}); 
 
-    backToTopPrimary.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    backToTopSecondary.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+// Smooth scroll to top when either button is clicked
+backToTopPrimary.addEventListener('click', () => { 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+}); 
 
-    // About Me toggle + typewriter
-    const toggleButton = document.getElementById('aboutToggle');
-    const aboutContent = document.getElementById('aboutContent');
-    const typewriterText = document.getElementById('typewriterText');
-    let originalText = typewriterText.textContent;
-
-    typewriterText.textContent = '';
-
-    toggleButton.addEventListener('click', () => {
-        aboutContent.classList.toggle('open');
-
-        if (aboutContent.classList.contains('open')) {
-            toggleButton.textContent = 'Retract Bio';
-            typeWriter(originalText);
-        } else {
-            toggleButton.textContent = 'Launch Bio';
-            typewriterText.textContent = '';
-        }
-    });
-
-    function typeWriter(text, i = 0) {
-        if (i < text.length) {
-            typewriterText.textContent += text.charAt(i);
-            setTimeout(() => typeWriter(text, i + 1), 30);
-        }
-    }
-
+backToTopSecondary.addEventListener('click', () => { 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
 });
-</script>
