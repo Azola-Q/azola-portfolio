@@ -3,11 +3,11 @@
 {% block content %}
 
 <section class="about-section p-4 my-5 text-white">
-    <h2 class="mb-4">About Me</h2>
+    <h2 class="mb-4">Read About Me</h2>
 
     <!-- Toggle Button -->
     <button class="btn btn-info mb-3" id="aboutToggle">
-        Show About Me
+        Launch Bio
     </button>
 
     <!-- Collapsible Content -->
@@ -247,9 +247,9 @@
 
         // Change button text
         if (aboutContent.classList.contains('open')) {
-            toggleButton.textContent = 'Hide About Me';
+            toggleButton.textContent = 'Retract Bio';
         } else {
-            toggleButton.textContent = 'Show About Me';
+            toggleButton.textContent = 'Launch Bio';
         }
     });
 </script>
