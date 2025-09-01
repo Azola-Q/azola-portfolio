@@ -243,11 +243,12 @@
     const aboutContent = document.getElementById('aboutContent');
 
     toggleButton.addEventListener('click', () => {
-        if (aboutContent.style.display === 'none') {
-            aboutContent.style.display = 'block';
+        aboutContent.classList.toggle('open');
+
+        // Change button text
+        if (aboutContent.classList.contains('open')) {
             toggleButton.textContent = 'Hide About Me';
         } else {
-            aboutContent.style.display = 'none';
             toggleButton.textContent = 'Show About Me';
         }
     });
