@@ -207,14 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Remove active class from all buttons
             certButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
 
             // Hide all categories with fade-out
             certCategories.forEach(cat => {
                 if (cat.getAttribute('data-category') === selectedCategory) {
                     cat.classList.remove('hidden');
-                    // Fade-in effect
                     cat.style.opacity = 0;
                     setTimeout(() => { cat.style.opacity = 1; }, 50);
                 } else {
@@ -223,6 +221,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    });
+
+    // ---------------- Certificate Lightbox ----------------
+    const certImages = document.querySelectorAll('.cert-img');
+
+    // Create lightbox overlay element
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.style.position = 'fixed';
+    lightbox.style.top = 0;
+    lightbox.style.left = 0;
+    lightbox.style.width = '100%';
+    lightbox.style.height = '100%';
+    lightbox.style.background = 'rgba(0,0,0,0.8)';
+    lightbox.style.display = 'flex';
+    lightbox.style.justifyContent = 'center';
+    lightbox.style.alignItems = 'center';
+    lightbox.style.opacity = 0;
+    lightbox.style.transition = 'opacity 0.3s';
+    lightbox.style.zIndex = 9999;
+    lightbox.style.cursor = 'pointer';
+
+    const lightboxImg = document.createElement('img');
+    lightboxImg.style.maxWidth = '90%';
+    lightboxImg.style.maxHeight = '90%';
+    lightboxImg.style.boxShadow = '0 0 20px rgba(255,255,255,0.5)';
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    certImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            setTimeout(() => lightbox.style.opacity = 1, 10); // fade in
+        });
+    });
+
+    // Close lightbox on click
+    lightbox.addEventListener('click', () => {
+        lightbox.style.opacity = 0;
+        setTimeout(() => { lightbox.style.display = 'none'; }, 300);
     });
 
 });
