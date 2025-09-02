@@ -562,27 +562,30 @@ footer a:hover::after {
     margin-bottom: 25px;
 }
 
+/* Certificate Buttons Styled Like Launch Bio Button */
 .cert-btn {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    border-radius: 8px;
+    color: white;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    background-color: #1e90ff; /* same as Launch Bio */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: breathe 1.5s ease-in-out infinite;
+    display: inline-block;
 }
 
 .cert-btn:hover {
-    background-color: #007BFF;
-    color: white;
+    background-color: #63b3ff; /* lighter blue on hover */
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
+/* Active Button Style */
 .cert-btn.active {
-    background-color: #007BFF;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+    background-color: #007BFF; /* darker blue for active state */
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
 }
 
 /* Certificate Images Container */
