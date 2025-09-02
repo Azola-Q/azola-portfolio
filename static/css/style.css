@@ -544,4 +544,39 @@ footer a:hover::after {
         padding: 15px 10px;
     }
 }
+/* -------------------------*/
+.cert-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
 
+.cert-btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.cert-btn.active, .cert-btn:hover {
+  background: #007BFF;
+  color: white;
+}
+
+.cert-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.cert-img {
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
