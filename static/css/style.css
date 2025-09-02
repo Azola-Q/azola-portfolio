@@ -647,3 +647,11 @@ footer a:hover::after {
         width: 90%;
     }
 }
+
+/* Center specific headings */
+h2.mb-4,
+h3.mt-5 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
