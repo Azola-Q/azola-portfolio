@@ -584,7 +584,7 @@ footer a:hover::after {
 
 /* Active Button Style */
 .cert-btn.active {
-    background-color: #007BFF; /* darker blue for active state */
+    background-color: #63b3ff; /* darker blue for active state */
     box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
 }
 
