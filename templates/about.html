@@ -136,44 +136,73 @@
 </div>
 </section>
 </section>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // About Me toggle + typewriter
+    // ---------------- About Me Toggle + Typewriter ----------------
     const toggleButton = document.getElementById('aboutToggle');
     const aboutContent = document.getElementById('aboutContent');
     const typewriterText = document.getElementById('typewriterText');
 
-    if (!toggleButton || !aboutContent || !typewriterText) return;
+    if (toggleButton && aboutContent && typewriterText) {
+        let originalText = typewriterText.textContent;
+        let typingInProgress = false;
+        typewriterText.textContent = '';
 
-    let originalText = typewriterText.textContent;
-    let typingInProgress = false; // prevent double typing
-    typewriterText.textContent = '';
+        toggleButton.addEventListener('click', () => {
+            aboutContent.classList.toggle('open');
 
-    toggleButton.addEventListener('click', () => {
-        aboutContent.classList.toggle('open');
-
-        if (aboutContent.classList.contains('open')) {
-            toggleButton.textContent = 'Retract Bio';
-            if (!typingInProgress) {
-                typingInProgress = true;
-                typeWriter(originalText, 0);
+            if (aboutContent.classList.contains('open')) {
+                toggleButton.textContent = 'Retract Bio';
+                if (!typingInProgress) {
+                    typingInProgress = true;
+                    typeWriter(originalText, 0);
+                }
+            } else {
+                toggleButton.textContent = 'Launch Bio';
+                typewriterText.textContent = '';
+                typingInProgress = false;
             }
-        } else {
-            toggleButton.textContent = 'Launch Bio';
-            typewriterText.textContent = '';
-            typingInProgress = false;
-        }
-    });
+        });
 
-    function typeWriter(text, i) {
-        if (i < text.length) {
-            typewriterText.textContent += text.charAt(i);
-            setTimeout(() => typeWriter(text, i + 1), 30);
-        } else {
-            typingInProgress = false; // typing finished
+        function typeWriter(text, i) {
+            if (i < text.length) {
+                typewriterText.textContent += text.charAt(i);
+                setTimeout(() => typeWriter(text, i + 1), 30);
+            } else {
+                typingInProgress = false;
+            }
         }
     }
+
+    // ---------------- Certificates Category Toggle ----------------
+    const certButtons = document.querySelectorAll('.cert-btn');
+    const certCategories = document.querySelectorAll('.cert-category');
+
+    certButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedCategory = button.getAttribute('data-category');
+
+            // Remove active class from all buttons
+            certButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Hide all categories with fade-out
+            certCategories.forEach(cat => {
+                if (cat.getAttribute('data-category') === selectedCategory) {
+                    cat.classList.remove('hidden');
+                    // Fade-in effect
+                    cat.style.opacity = 0;
+                    setTimeout(() => { cat.style.opacity = 1; }, 50);
+                } else {
+                    cat.classList.add('hidden');
+                    cat.style.opacity = 0;
+                }
+            });
+        });
+    });
 
 });
 </script>
