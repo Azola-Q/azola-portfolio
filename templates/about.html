@@ -49,43 +49,60 @@
     </div>
 
 <section id="certifications">
-    <h3 class="mt-5">Certifications</h3>
-   <!-- Category Navigation -->
-    
-    <div class="cert-nav">
-    <button class="cert-btn active" onclick="showCategory('ai')">AI Bootcamp</button>
-    <button class="cert-btn" onclick="showCategory('support')">Technical Support</button>
-    <button class="cert-btn" onclick="showCategory('webdev')">Web & Software Development</button>
-    <button class="cert-btn" onclick="showCategory('prodev')">Professional Development</button>
-  </div>
+   <h3 class="mt-5">Certifications</h3>
 
-  <!-- Category Content -->
-  <div class="cert-content">
+<!-- Certificate Category Buttons -->
+<div class="cert-nav">
+    <button class="cert-btn active" data-category="ai">AI BOOTCAMP</button>
+    <button class="cert-btn" data-category="support">Technical Support</button>
+    <button class="cert-btn" data-category="webdev">Web & Software Development</button>
+    <button class="cert-btn" data-category="profdev">Professional Development</button>
+</div>
 
-    <!-- AI Bootcamp -->
-    <div class="cert-category" id="ai">
-      <img src="{{ url_for('static', filename='images/certificates/ai1.jpg') }}" alt="AI Bootcamp Cert 1" class="cert-img">
-      <img src="{{ url_for('static', filename='images/certificates/ai2.jpg') }}" alt="AI Bootcamp Cert 2" class="cert-img">
-      <img src="{{ url_for('static', filename='images/certificates/ai3.jpg') }}" alt="AI Bootcamp Cert 3" class="cert-img">
+<!-- Certificate Images -->
+<div id="certificates-container">
+
+    <!-- AI BOOTCAMP -->
+    <div class="cert-category" data-category="ai">
+        <img src="{{ url_for('static', filename='images/certs/ai1.jpg') }}" alt="AI For Everyone" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai2.jpg') }}" alt="Introduction to AI" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai3.jpg') }}" alt="Generative AI" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai4.jpg') }}" alt="AI Essentials" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai5.jpg') }}" alt="Python for Data Science, AI & Development" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai6.jpg') }}" alt="Advanced Learning Algorithm" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai7.jpg') }}" alt="Generative AI LLM" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai8.jpg') }}" alt="Responsible AI" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/ai9.jpg') }}" alt="Prompt Engineering with ChatGPT" class="cert-img">
     </div>
 
     <!-- Technical Support -->
-    <div class="cert-category hidden" id="support">
-      <img src="{{ url_for('static', filename='images/certificates/support1.jpg') }}" alt="Tech Support Cert" class="cert-img">
-      <img src="{{ url_for('static', filename='images/certificates/support2.jpg') }}" alt="Tech Support Cert" class="cert-img">
+    <div class="cert-category hidden" data-category="support">
+        <img src="{{ url_for('static', filename='images/certs/support1.jpg') }}" alt="Intro to Hardware & OS" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support2.jpg') }}" alt="Technical Support Fundamentals" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support3.jpg') }}" alt="Networking Basics" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support4.jpg') }}" alt="Operating Systems & Power User" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support5.jpg') }}" alt="System Administration & IT Infrastructure" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support6.jpg') }}" alt="IT Security: Defense" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support7.jpg') }}" alt="Detection & Response" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/support8.jpg') }}" alt="Technical Support Case Studies" class="cert-img">
     </div>
 
     <!-- Web & Software Development -->
-    <div class="cert-category hidden" id="webdev">
-      <img src="{{ url_for('static', filename='images/certificates/web1.jpg') }}" alt="Web Dev Cert" class="cert-img">
+    <div class="cert-category hidden" data-category="webdev">
+        <img src="{{ url_for('static', filename='images/certs/web1.jpg') }}" alt="Responsive Web Design" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/web2.jpg') }}" alt="JavaScript Algorithms" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/web3.jpg') }}" alt="Python Essentials 1" class="cert-img">
     </div>
 
     <!-- Professional Development -->
-    <div class="cert-category hidden" id="prodev">
-      <img src="{{ url_for('static', filename='images/certificates/pro1.jpg') }}" alt="Professional Development Cert" class="cert-img">
+    <div class="cert-category hidden" data-category="profdev">
+        <img src="{{ url_for('static', filename='images/certs/prof1.jpg') }}" alt="Customer Service Fundamentals" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/prof2.jpg') }}" alt="Verbal Communication & Presentation Skills" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/prof3.jpg') }}" alt="Creative & Critical Thinking" class="cert-img">
+        <img src="{{ url_for('static', filename='images/certs/prof4.jpg') }}" alt="Managing Conflicts with EI" class="cert-img">
     </div>
 
-  </div>
+</div>
 </section>
 
     <h3 class="mt-5">Technical Skills</h3>
