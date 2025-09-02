@@ -545,38 +545,102 @@ footer a:hover::after {
     }
 }
 /* -------------------------*/
+/* ------------------- Certificates Section ------------------- */
+#certifications {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Category Buttons (Nav) */
 .cert-nav {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
 .cert-btn {
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  background: #eee;
-  border-radius: 6px;
-  transition: 0.3s;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.cert-btn.active, .cert-btn:hover {
-  background: #007BFF;
-  color: white;
+.cert-btn:hover {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(1.05);
 }
 
+.cert-btn.active {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+}
+
+/* Certificate Images Container */
+#certificates-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual Category Grid */
 .cert-category {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
+/* Hidden categories */
+.cert-category.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Individual Certificate Images */
 .cert-img {
-  width: 220px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hidden {
-  display: none;
+.cert-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cert-img {
+        width: 45%;
+    }
+
+    .cert-nav {
+        gap: 8px;
+    }
+
+    .cert-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-img {
+        width: 90%;
+    }
 }
