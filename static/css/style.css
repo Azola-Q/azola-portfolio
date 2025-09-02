@@ -190,7 +190,7 @@ main.container {
 
 /* Typewriter Text */
 #typewriterText {
-    display: inline-block;       /* keeps the typewriter cursor effect */
+    display: block;       /* keeps the typewriter cursor effect */
     border-right: 2px solid white;
     white-space: pre-wrap;       /* allows wrapping */
     overflow: hidden;            /* keeps cursor neat */
