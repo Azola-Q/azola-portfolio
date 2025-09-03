@@ -711,14 +711,14 @@ h3.mt-5 {
 .skill-item {
     color: white;
     font-weight: bold;
-    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    background: linear-gradient(135deg, #ff6f61, #ff3d00, #d81b60);
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     animation: breathe 1.5s ease-in-out infinite;
     display: inline-block;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 99, 97, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -739,9 +739,9 @@ h3.mt-5 {
 }
 
 .skill-item:hover {
-    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    background: linear-gradient(135deg, #ff6f61, #ff3d00, #d81b60);
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 25px rgba(255, 99, 97, 0.8);
 }
 
 /* Breathe Animation */
