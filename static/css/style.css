@@ -372,7 +372,7 @@ main.container {
 
 
 
-/* 🔵 Back-to-Top Button (Fancy) */
+* 🔵 Back-to-Top Button (Fancy) */
 .back-to-top {
     position: fixed;
     display: none;
@@ -384,7 +384,7 @@ main.container {
     font-size: 1.5rem;
     line-height: 1;
     text-align: center;
-    z-index: 1000;
+    z-index: 2000; /* Increased to ensure visibility */
     cursor: pointer;
     /* Modern Futuristic Styles */
     background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
@@ -435,9 +435,9 @@ main.container {
 }
 
 .back-to-top.show {
+    display: block; /* Added to ensure visibility */
     animation: bounceIn 0.5s forwards, pulse 2s infinite;
 }
-
 
 
 /* Footer */
