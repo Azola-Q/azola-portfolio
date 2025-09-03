@@ -233,6 +233,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ---------------- Skills Category Toggle ----------------
+    const skillButtons = document.querySelectorAll('.skill-nav-btn');
+    const skillCategories = document.querySelectorAll('.skill-category');
+
+    skillButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedCategory = button.getAttribute('data-category');
+
+            // Remove active class from all buttons
+            skillButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Hide all categories with fade-out
+            skillCategories.forEach(cat => {
+                if (cat.getAttribute('data-category') === selectedCategory) {
+                    cat.classList.remove('hidden');
+                    cat.style.opacity = 0;
+                    setTimeout(() => { cat.style.opacity = 1; }, 50);
+                } else {
+                    cat.classList.add('hidden');
+                    cat.style.opacity = 0;
+                }
+            });
+        });
+    });
+
     // ---------------- Certificate Lightbox ----------------
     const certImages = document.querySelectorAll('.cert-img');
 
@@ -274,30 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.opacity = 0;
         setTimeout(() => { lightbox.style.display = 'none'; }, 300);
     });
-// ---------------- Skills Category Toggle ----------------
-    const skillButtons = document.querySelectorAll('.skill-nav-btn');
-    const skillCategories = document.querySelectorAll('.skill-category');
 
-    skillButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedCategory = button.getAttribute('data-category');
-
-            // Remove active class from all buttons
-            skillButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            // Hide all categories with fade-out
-            skillCategories.forEach(cat => {
-                if (cat.getAttribute('data-category') === selectedCategory) {
-                    cat.classList.remove('hidden');
-                    cat.style.opacity = 0;
-                    setTimeout(() => { cat.style.opacity = 1; }, 50);
-                } else {
-                    cat.classList.add('hidden');
-                    cat.style.opacity = 0;
-                }
-            });
-        });
 });
 </script>
 
