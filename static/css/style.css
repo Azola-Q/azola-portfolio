@@ -510,6 +510,7 @@ footer a:hover::after {
     text-align: center;
 }
 
+
 /* Category Buttons (Nav) */
 .cert-nav {
     display: flex;
@@ -523,7 +524,7 @@ footer a:hover::after {
 .cert-btn {
     color: white;
     font-weight: bold;
-    background-color: #1e90ff; /* same as Launch Bio */
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -531,12 +532,13 @@ footer a:hover::after {
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     animation: breathe 1.5s ease-in-out infinite;
     display: inline-block;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 .cert-btn:hover {
-    background-color: #63b3ff; /* lighter blue on hover */
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }
 
 /* Active Button Style */
@@ -544,6 +546,7 @@ footer a:hover::after {
     background-color: #63b3ff; /* darker blue for active state */
     box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
 }
+
 
 /* Certificate Images Container */
 #certificates-container {
