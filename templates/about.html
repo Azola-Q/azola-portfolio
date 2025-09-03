@@ -123,38 +123,50 @@
 </div>
 </section>
 
-    <h3 class="mt-5">Technical Skills</h3>
-<div class="d-flex flex-wrap gap-2 mb-4">
-    <span class="badge bg-primary">Python</span>
-    <span class="badge bg-primary">Java</span>
-    <span class="badge bg-primary">Visual Basics</span>
-    <span class="badge bg-primary">HTML/CSS/Bootstrap</span>
-    <span class="badge bg-primary">JavaScript</span>
-    <span class="badge bg-primary">Flask</span>
-    <span class="badge bg-primary">Django</span>
-    <span class="badge bg-primary">MySQL</span>
-    <span class="badge bg-primary">WordPress</span>
-    <span class="badge bg-primary">Streamlit</span>
-    <span class="badge bg-primary">Git</span>
-    <span class="badge bg-primary">Render</span>
-    <span class="badge bg-primary">API Integration</span>
-    <span class="badge bg-primary">No-Code Tools (Lovable, Make, Landbot)</span>
-    <span class="badge bg-primary">AI APIs (Cohere, OpenAI, Hugging Face)</span>
-</div>
+   <section id="skills">
+    <h3 class="mt-5">Skills</h3>
 
-<h3 class="mt-4">Soft Skills</h3>
-<div class="d-flex flex-wrap gap-2">
-    <span class="badge bg-secondary">Problem Solving</span>
-    <span class="badge bg-secondary">Critical Thinking</span>
-    <span class="badge bg-secondary">Teamwork</span>
-    <span class="badge bg-secondary">Adaptability</span>
-    <span class="badge bg-secondary">Time Management</span>
-    <span class="badge bg-secondary">Effective Communication</span>
-    <span class="badge bg-secondary">Continuous Learning</span>
-</div>
-</section>
-</section>
+    <!-- Skills Category Buttons -->
+    <div class="skill-nav">
+        <button class="skill-nav-btn active" data-category="technical">Technical Skills</button>
+        <button class="skill-nav-btn" data-category="soft">Soft Skills</button>
+    </div>
 
+    <!-- Skills Items -->
+    <div id="skills-container">
+        <!-- Technical Skills -->
+        <div class="skill-category" data-category="technical">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">Visual Basics</span>
+            <span class="skill-item">HTML/CSS/Bootstrap</span>
+            <span class="skill-item">JavaScript</span>
+            <span class="skill-item">Flask</span>
+            <span class="skill-item">Django</span>
+            <span class="skill-item">MySQL</span>
+            <span class="skill-item">WordPress</span>
+            <span class="skill-item">Streamlit</span>
+            <span class="skill-item">Git</span>
+            <span class="skill-item">Render</span>
+            <span class="skill-item">API Integration</span>
+            <span class="skill-item">No-Code Tools (Lovable, Make, Landbot)</span>
+            <span class="skill-item">AI APIs (Cohere, OpenAI, Hugging Face)</span>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-category hidden" data-category="soft">
+            <span class="skill-item">Problem Solving</span>
+ powinien <span class="skill-item">Critical Thinking</span>
+            <span class="skill-item">Teamwork</span>
+            <span class="skill-item">Adaptability</span>
+            <span class="skill-item">Time Management</span>
+            <span class="skill-item">Effective Communication</span>
+            <span class="skill-item">Continuous Learning</span>
+        </div>
+    </div>
+</section>
+    
+</section>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
