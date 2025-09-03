@@ -634,3 +634,119 @@ h3.mt-5 {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+/* Skills Navigation */
+.skill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* Skills Navigation Buttons */
+.skill-nav-btn {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: breathe 1.5s ease-in-out infinite;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-nav-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: all 0.5s;
+}
+
+.skill-nav-btn:hover::before {
+    left: 100%;
+}
+
+.skill-nav-btn:hover {
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.skill-nav-btn.active {
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+/* Skills Container */
+#skills-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Skill Category */
+.skill-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.skill-category.hidden {
+    display: none;
+}
+
+/* Skill Items */
+.skill-item {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: breathe 1.5s ease-in-out infinite;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: all 0.5s;
+}
+
+.skill-item:hover::before {
+    left: 100%;
+}
+
+.skill-item:hover {
+    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+/* Breathe Animation */
+@keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
