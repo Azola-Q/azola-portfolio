@@ -692,7 +692,6 @@ h3.mt-5 {
     padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    animation: breathe 1.5s ease-in-out infinite;
     display: inline-block;
     box-shadow: 0 0 15px rgba(255, 99, 97, 0.5);
     position: relative;
