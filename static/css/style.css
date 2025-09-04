@@ -750,3 +750,9 @@ h3.mt-5 {
     50% { transform: scale(1.03); }
     100% { transform: scale(1); }
 }
+
+/* View Proj link */
+a.btn.btn-outline-light.btn-lg.hover-pop:hover {
+    color: orange !important;
+    border-color: orange !important;
+}
