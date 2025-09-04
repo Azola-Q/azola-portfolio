@@ -739,73 +739,14 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     color: orange !important;
     border-color: orange !important;
 }
-
-
-
 /* Card Styling */
 .card {
-    background-color: #ffffff; /* Pure white for a cleaner look */
-    border-radius: 12px; /* Softer, modern corners */
-    padding: 20px; /* Improved content spacing */
+    background-color: #f8f9fa;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: bounceIn 0.8s ease-out, pulse 2s infinite; /* Added pulse animation */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Base soft shadow */
-    border: 2px solid transparent; /* Gradient border placeholder */
-    background-clip: padding-box; /* Ensures content stays within padding */
-    position: relative; /* For gradient border effect */
-    overflow: hidden; /* Contain potential overflow from effects */
+    animation: bounceIn 0.8s ease-out;
 }
 
-/* Gradient Border Effect using ::before */
-.card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
-    z-index: -1;
-    border-radius: 14px; /* Slightly larger to cover the border */
-    padding: 2px; /* Thickness of the gradient border */
-    pointer-events: none; /* Avoid interfering with clicks */
-}
-
-/* Enhanced Hover Effects */
 .card:hover {
-    transform: translateY(-5px) scale(1.02); /* Slight scale for depth */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 255, 255, 0.3); /* Glowing effect */
-}
-
-/* Pulse Animation (subtle scale variation) */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-    100% { transform: scale(1); }
-}
-
-/* BounceIn Animation (assumed to be defined elsewhere) */
-@keyframes bounceIn {
-    0% { transform: scale(0.9); opacity: 0; }
-    60% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); }
-}
-
-/* Optional: Improve Content Styling */
-.card h4 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.card p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-/* Optional: Add a subtle inner glow on hover */
-.card:hover::before {
-    filter: brightness(1.2); /* Slight brighten effect on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
