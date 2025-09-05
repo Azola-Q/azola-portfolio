@@ -771,52 +771,15 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
   transform: rotate(40deg);
 }
 
-/*-------------Projects buttons-----------------------*/
-/* Upgraded Primary Buttons with Gradient & Animation */
 .btn-primary {
-    color: white;
-    font-weight: bold;
-    background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    animation: breathe 1.5s ease-in-out infinite;
-    display: inline-block;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: all 0.5s;
-}
-
-.btn-primary:hover::before {
-    left: 100%;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+    animation: bounce 1s infinite alternate;
 }
 
 .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
-}
-
-.btn-primary.active {
-    background-color: #63b3ff; /* darker blue for active state */
-    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
-}
-
-/* Breathe animation for subtle pulse */
-@keyframes breathe {
-    0% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
-    50% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); }
-    100% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
 }
