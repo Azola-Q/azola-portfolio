@@ -731,6 +731,7 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     color: orange !important;
     border-color: orange !important;
 }
+
 * Card Styling */
 .card {
     background-color: #ffffff; /* Pure white */
@@ -739,7 +740,6 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: bounceIn 0.8s ease-out;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
@@ -748,21 +748,34 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 
 /*-------------------------------------------*/
 /* Chevron styling */
+/* Expandable card details hidden by default */
+.expandable-card .card-details {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Show details when active */
+.expandable-card.active .card-details {
+  display: block;
+}
+
+/* Title + Chevron */
 .card-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer; /* Show pointer on hover */
+  cursor: pointer;
+  margin: 0;
 }
 
 .chevron {
+  font-size: 1.2rem;
   transition: transform 0.3s ease;
-  font-size: 1rem;
-  margin-left: 10px;
+  color: #ff6600; /* orange accent */
 }
 
-/* Rotate when active */
 .expandable-card.active .chevron {
   transform: rotate(90deg);
 }
-
