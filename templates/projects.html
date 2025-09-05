@@ -3,38 +3,84 @@
 {% block content %}
 <section class="project-section p-4 my-5 text-white">
     <h2 class="mb-4">My Projects</h2>
-    
-     <div class="card mb-3">
-        <div class="card-body">
-            <h3 class="card-title">Cars.co.za | Sentiment Analysis Dashboard</h3>
-            <p class="card-text">Developed a dashboard to analyze YouTube comments, providing actionable insights using natural language processing and Recommendation for cars.co.za.</p>
-            <p class="card-text"><strong>Tech Stack:</strong> Flask, Python, Render</p>
-            <a href="https://car-sense-t14j.onrender.com/" class="btn btn-primary">View Live</a>
-        </div>
+ <div class="card expandable-card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">
+      Cars.co.za | Sentiment Analysis Dashboard
+      <span class="chevron">▶</span>
+    </h3>
+    <div class="card-details">
+      <p class="card-text">Developed a dashboard to analyze YouTube comments, providing actionable insights using natural language processing and Recommendation for cars.co.za.</p>
+      <p class="card-text"><strong>Tech Stack:</strong> Flask, Python, Render</p>
+      <a href="https://car-sense-t14j.onrender.com/" class="btn btn-primary">View Live</a>
     </div>
-    <div class="card mb-3">
-        <div class="card-body">
-            <h3 class="card-title">Sentiment Analysis Dashboard</h3>
-            <p class="card-text">Developed a dashboard to analyze YouTube comments, providing actionable insights using natural language processing.</p>
-            <p class="card-text"><strong>Tech Stack:</strong> Python, Streamlit</p>
-            <a href="https://sentiment-dashboard-evzvmpqgutwht5bubgbh4u.streamlit.app/" class="btn btn-primary">View Live</a>
-        </div>
+  </div>
+</div>
+
+<div class="card expandable-card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">
+      Sentiment Analysis Dashboard
+      <span class="chevron">▶</span>
+    </h3>
+    <div class="card-details">
+      <p class="card-text">Developed a dashboard to analyze YouTube comments, providing actionable insights using natural language processing.</p>
+      <p class="card-text"><strong>Tech Stack:</strong> Python, Streamlit</p>
+      <a href="https://sentiment-dashboard-evzvmpqgutwht5bubgbh4u.streamlit.app/" class="btn btn-primary">View Live</a>
     </div>
-    <div class="card mb-3">
-        <div class="card-body">
-            <h3 class="card-title">AI Resume Builder</h3>
-            <p class="card-text">Created an AI-powered tool to generate ATS-optimized resumes, streamlining job applications.</p>
-            <p class="card-text"><strong>Tech Stack:</strong> Lovable, Make, AI APIs</p>
-            <a href="https://resume-ai-craft-92.lovable.app/auth" class="btn btn-primary">View Live</a>
-        </div>
+  </div>
+</div>
+
+<div class="card expandable-card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">
+      AI Resume Builder
+      <span class="chevron">▶</span>
+    </h3>
+    <div class="card-details">
+      <p class="card-text">Created an AI-powered tool to generate ATS-optimized resumes, streamlining job applications.</p>
+      <p class="card-text"><strong>Tech Stack:</strong> Lovable, Make, AI APIs</p>
+      <a href="https://resume-ai-craft-92.lovable.app/auth" class="btn btn-primary">View Live</a>
     </div>
-   <div class="card mb-3">
-    <div class="card-body">
-        <h3 class="card-title">Water Incident Reporting Tool</h3>
-        <p class="card-text">Built a web-based tool to log, track, and manage water service delivery issues, enabling faster response times and data-driven decision-making.</p>
-        <p class="card-text"><strong>Tech Stack:</strong> Django, Python, PostgreSQL</p>
-        <a href="https://water-incident-reporting-tool.onrender.com" class="btn btn-primary">View Live</a>
+  </div>
+</div>
+
+<div class="card expandable-card mb-3">
+  <div class="card-body">
+    <h3 class="card-title">
+      Water Incident Reporting Tool
+      <span class="chevron">▶</span>
+    </h3>
+    <div class="card-details">
+      <p class="card-text">Built a web-based tool to log, track, and manage water service delivery issues, enabling faster response times and data-driven decision-making.</p>
+      <p class="card-text"><strong>Tech Stack:</strong> Django, Python, PostgreSQL</p>
+      <a href="https://water-incident-reporting-tool.onrender.com" class="btn btn-primary">View Live</a>
     </div>
+  </div>
 </div>
 </section>
+
+<script>
+  // Select all cards with the chevron
+  const expandableCards = document.querySelectorAll('.expandable-card');
+
+  expandableCards.forEach(card => {
+    const chevron = card.querySelector('.chevron');
+    const details = card.querySelector('.card-details');
+
+    // Hide details by default
+    details.style.display = 'none';
+
+    // Toggle on click
+    chevron.addEventListener('click', () => {
+      if (details.style.display === 'none') {
+        details.style.display = 'block';
+        chevron.textContent = '▼'; // change arrow direction
+      } else {
+        details.style.display = 'none';
+        chevron.textContent = '▶';
+      }
+    });
+  });
+</script>
 {% endblock %}
