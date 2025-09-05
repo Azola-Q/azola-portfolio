@@ -782,5 +782,5 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 }
 
 .expandable-card.active .chevron {
-  transform: rotate(45deg);
+  transform: rotate(40deg);
 }
