@@ -814,3 +814,34 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     50% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); }
     100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); }
 }
+.contact-section {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.contact-card .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.contact-card .form-control:focus {
+    border-color: #0ff;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    outline: none;
+}
+
+.contact-card h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: #e0e0e0;
+}
+
+ul.list-unstyled li a:hover {
+    color: #0ff;
+    text-decoration: underline;
+}
