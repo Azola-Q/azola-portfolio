@@ -745,22 +745,24 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
 }
 
-/* Hide details initially */
-.card-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
+
+/*-------------------------------------------*/
+/* Chevron styling */
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; /* Show pointer on hover */
 }
 
-/* Show on hover */
-.expandable-card:hover .card-details {
-    max-height: 500px; /* enough space for content */
-    opacity: 1;
+.chevron {
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
-/* When clicked (active state toggled by JS) */
-.expandable-card.active .card-details {
-    max-height: 500px;
-    opacity: 1;
+/* Rotate when active */
+.expandable-card.active .chevron {
+  transform: rotate(90deg);
 }
+
