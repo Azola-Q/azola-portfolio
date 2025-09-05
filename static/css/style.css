@@ -744,3 +744,23 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
 }
+
+/* Hide details initially */
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Show on hover */
+.expandable-card:hover .card-details {
+    max-height: 500px; /* enough space for content */
+    opacity: 1;
+}
+
+/* When clicked (active state toggled by JS) */
+.expandable-card.active .card-details {
+    max-height: 500px;
+    opacity: 1;
+}
