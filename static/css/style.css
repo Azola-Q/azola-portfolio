@@ -774,23 +774,22 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 
 /*-------------Projects buttons-----------------------*/
 /* Upgraded Primary Buttons with Gradient & Animation */
-.btn-primary {
-    color: white;
-    font-weight: bold;
+/* Only affects portfolio buttons */
+.portfolio-btn {
     background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
     border: none;
+    color: white;
+    font-weight: bold;
     padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 10px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-    animation: breathe 1.5s ease-in-out infinite;
-    display: inline-block;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
+    animation: breathe 1.5s ease-in-out infinite;
 }
 
-.btn-primary::before {
+.portfolio-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -801,16 +800,17 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     transition: all 0.5s;
 }
 
-.btn-primary:hover::before {
+.portfolio-btn:hover::before {
     left: 100%;
 }
 
-.btn-primary:hover {
+.portfolio-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-.btn-primary.active {
-    background-color: #63b3ff; /* darker blue for active state */
-    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
+@keyframes breathe {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.3); }
 }
