@@ -733,12 +733,14 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 }
 * Card Styling */
 .card {
-    background-color: #f8f9fa;
+    background-color: #ffffff; /* Pure white */
+    border-radius: 12px;       /* Smooth rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Soft subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: bounceIn 0.8s ease-out;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
 }
