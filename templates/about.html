@@ -16,45 +16,57 @@
     
 <h3 class="mt-5">Education</h3>
 <div class="card mb-3 expandable-card">
-    <div class="card-body">
-        <h4 class="card-title">National Diploma in Information Technology</h4>
-        <div class="card-details">
-            <p class="card-text">Walter Sisulu University (Feb 2018 – Dec 2020)</p>
-            <p class="card-text"><b>Skills:</b> HTML, CSS, JavaScript, Visual Basic, Java, DBMS, Hardware & Software Installation</p>
-            <p class="card-text"><b>Modules:</b> Development Software, Technical Programming, Graphical User Interface Design, Information Systems, System Software, Information Technology Skills</p>
-        </div>
+  <div class="card-body">
+    <h4 class="card-title">
+      National Diploma in Information Technology 
+      <span class="chevron">▶</span>
+    </h4>
+    <div class="card-details">
+      <p class="card-text">Walter Sisulu University (Feb 2018 – Dec 2020)</p>
+      <p class="card-text"><b>Skills:</b> HTML, CSS, JavaScript, Visual Basic, Java, DBMS, Hardware & Software Installation</p>
+      <p class="card-text"><b>Modules:</b> Development Software, Technical Programming, Graphical User Interface Design, Information Systems, System Software, Information Technology Skills</p>
     </div>
+  </div>
 </div>
 
 <h3 class="mt-5">Experience</h3>
 <div class="card mb-3 expandable-card">
-    <div class="card-body">
-        <h4 class="card-title">Technical Support Associate – CAPACITI</h4>
-        <div class="card-details">
-            <p class="card-text">Apr 2025 – Present | Cape Town</p>
-            <p class="card-text">Providing technical support and prototyping AI-driven and no-code solutions.</p>
-        </div>
+  <div class="card-body">
+    <h4 class="card-title">
+      Technical Support Associate – CAPACITI 
+      <span class="chevron">▶</span>
+    </h4>
+    <div class="card-details">
+      <p class="card-text">Apr 2025 – Present | Cape Town</p>
+      <p class="card-text">Providing technical support and prototyping AI-driven and no-code solutions.</p>
     </div>
+  </div>
 </div>
 
 <div class="card mb-3 expandable-card">
-    <div class="card-body">
-        <h4 class="card-title">Graduate Intern – Western Cape Education Department</h4>
-        <div class="card-details">
-            <p class="card-text">Apr 2023 – Mar 2025 | Cape Town</p>
-            <p class="card-text">Enhanced e-learning platforms with technical and media support.</p>
-        </div>
+  <div class="card-body">
+    <h4 class="card-title">
+      Graduate Intern – Western Cape Education Department 
+      <span class="chevron">▶</span>
+    </h4>
+    <div class="card-details">
+      <p class="card-text">Apr 2023 – Mar 2025 | Cape Town</p>
+      <p class="card-text">Enhanced e-learning platforms with technical and media support.</p>
     </div>
+  </div>
 </div>
 
 <div class="card mb-3 expandable-card">
-    <div class="card-body">
-        <h4 class="card-title">Software Development Intern – Coega Development Corporation</h4>
-        <div class="card-details">
-            <p class="card-text">Mar 2022 – Jul 2022 | Gqeberha</p>
-            <p class="card-text">Developed solutions using WordPress, MySQL, and SharePoint.</p>
-        </div>
+  <div class="card-body">
+    <h4 class="card-title">
+      Software Development Intern – Coega Development Corporation 
+      <span class="chevron">▶</span>
+    </h4>
+    <div class="card-details">
+      <p class="card-text">Mar 2022 – Jul 2022 | Gqeberha</p>
+      <p class="card-text">Developed solutions using WordPress, MySQL, and SharePoint.</p>
     </div>
+  </div>
 </div>
 
 
@@ -318,12 +330,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------- Education & Experience Expandable Cards ----------------
-    const expandableCards = document.querySelectorAll(".expandable-card");
-    expandableCards.forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("active");
-        });
+const expandableCards = document.querySelectorAll(".expandable-card");
+expandableCards.forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("active");
+
+        // Toggle chevron symbol
+        const chevron = card.querySelector(".chevron");
+        if (card.classList.contains("active")) {
+            chevron.textContent = "▼";
+        } else {
+            chevron.textContent = "▶";
+        }
     });
+});
 
 });
 </script>
