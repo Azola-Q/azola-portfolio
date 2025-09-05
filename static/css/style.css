@@ -772,10 +772,15 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 
 .chevron {
   font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2); /* same as buttons */
+  -webkit-background-clip: text;   /* Chrome, Safari */
+  -webkit-text-fill-color: transparent;
+  background-clip: text;           /* Firefox */
+  color: transparent;              /* fallback */
   transition: transform 0.3s ease;
-  color: #ff6600; /* orange accent */
 }
 
 .expandable-card.active .chevron {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
 }
