@@ -1,11 +1,18 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
+from flask_mail import Mail, Message
 import os
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here'  # Replace with a secure key for production
+app.secret_key = 'aazloquaqka-2520'  # Replace with a secure key for production
 
-# Path to store contact form submissions
-MESSAGES_FILE = os.path.join(os.path.dirname(__file__), 'messages.txt')
+# --- Flask-Mail Configuration ---
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'azolaqakaqu@gmail.com'      # <-- your Gmail address
+app.config['MAIL_PASSWORD'] = 'xnlnwaqceukdpoon'        # <-- Gmail App Password
+
+mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -25,10 +32,23 @@ def contact():
         name = request.form.get('name')
         email = request.form.get('email')
         message = request.form.get('message')
-        with open(MESSAGES_FILE, 'a') as f:
-            f.write(f"Name: {name}, Email: {email}, Message: {message}\n")
-        flash(f'Thanks, {name}! Your message has been received.')
+
+        try:
+            msg = Message(
+                subject=f"New message from {name}",
+                sender=app.config['MAIL_USERNAME'],
+                recipients=['azolaqakaqu@gmail.com'],  # where you’ll receive messages
+                body=f"From: {name} <{email}>\n\nMessage:\n{message}"
+            )
+            mail.send(msg)
+
+            flash("Your message has been sent successfully!", "success")
+
+        except Exception as e:
+            flash(f"There was an error sending your message: {e}", "danger")
+
         return redirect(url_for('contact'))
+
     return render_template('contact.html')
 
 if __name__ == '__main__':
