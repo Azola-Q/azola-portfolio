@@ -828,13 +828,13 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 
 /*----Contact btn-------*/
 .contact-btn {
-    display: block;
+    display: inline-block;
     margin: 0 auto 15px auto;
     color: #fff;
     font-weight: bold;
     background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
     border: none;
-    padding: 12px 28px;
+    padding: 12px 40px;
     cursor: pointer;
     border-radius: 12px;
     font-size: 1rem;
