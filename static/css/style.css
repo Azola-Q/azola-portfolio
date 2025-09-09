@@ -88,12 +88,6 @@ main.container {
     flex-grow: 1;
 }
 
-/* Buttons */
-.badge {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    animation: pulse 1.5s infinite;
-}
 
 /* Profile Section */
 .profile-section {
@@ -266,20 +260,6 @@ main.container {
 .contact-form button {
     width: 100%; /* makes button full width */
     border-radius: 10px;
-}
-
-.badge {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-    border-radius: 30px;
-    background-color: #ffe600;
-    color: white;
-    animation: pulse 1.5s infinite;
-    box-shadow: 0 0 5px rgba(60, 128, 82, 0.2);
-}
-
-.badge.bg-secondary {
-    background-color: #1d3a53;
 }
 
 /* Certificate Category Row Colors */
@@ -742,9 +722,6 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
 }
 
-
-/*-------------------------------------------*/
-/* Chevron styling */
 /* Expandable card details hidden by default */
 .expandable-card .card-details {
   display: none;
@@ -784,8 +761,7 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
 
 
 /*-------------Projects buttons-----------------------*/
-/* Upgraded Primary Buttons with Gradient & Animation */
-/* Only affects portfolio buttons */
+/* Upgraded portfolio buttons with Gradient & Animation */
 .portfolio-btn {
     background: linear-gradient(135deg, #0ff, #1e90ff, #8a2be2);
     border: none;
