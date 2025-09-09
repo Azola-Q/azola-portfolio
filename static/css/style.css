@@ -755,9 +755,7 @@ a.btn.btn-outline-light.btn-lg.hover-pop:hover {
   transition: transform 0.3s ease;
 }
 
-.expandable-card.active .chevron {
-  transform: rotate(40deg);
-}
+
 
 
 /*-------------Projects buttons-----------------------*/
