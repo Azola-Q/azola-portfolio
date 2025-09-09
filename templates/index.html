@@ -8,14 +8,7 @@
     <div class="image-frame mb-4">
         <img src="{{ url_for('static', filename='images/azola.jpeg') }}" 
              alt="Azola Qakaqu Profile Picture" 
-             class="profile-img shadow">
-    </div>
-
-    <!-- Badges Section -->
-    <div class="badges-container mb-4">
-        <img src="{{ url_for('static', filename='images/badge1.png') }}" alt="Badge 1" class="badge-img">
-        <img src="{{ url_for('static', filename='images/badge2.png') }}" alt="Badge 2" class="badge-img">
-        <img src="{{ url_for('static', filename='images/badge3.png') }}" alt="Badge 3" class="badge-img">
+             class="profile-img shadow animate-fade">
     </div>
 
     <!-- Animated Heading -->
@@ -24,17 +17,30 @@
     </h2>
 
     <!-- Modernized Lead Text -->
-    <p class="lead text-light animate-fade text-center">
-        A <b>Programming & Technical Support Professional</b> based in Cape Town.<br> 
-        Passionate about building <span class="highlight">efficient applications</span>,  
-        automating workflows with <span class="highlight">Python</span>,  
-        managing data with <span class="highlight">MySQL</span>,  
-        and crafting modern web experiences using <span class="highlight">front-end technologies</span> and <span class="highlight">no-code tools</span>. 
+   <p class="lead text-light animate-fade text-center">
+    A <b>Programming & Technical Support Professional</b> based in Cape Town.<br> 
+    Passionate about building <span class="highlight">efficient applications</span>,  
+    automating workflows with <span class="highlight">Python</span>,  
+    managing data with <span class="highlight">MySQL</span>,  
+    and crafting modern web experiences using <span class="highlight">front-end technologies</span> and <span class="highlight">no-code tools</span>. 
     </p>
+
+    <!-- Badges Section -->
+    <div class="badges-container mt-3 mb-4 animate-fade">
+        <a href="https://lnkd.in/eMVksstc" target="_blank">
+            <img src="{{ url_for('static', filename='images/badge1.png') }}" alt="Badge 1" class="badge-img me-2">
+        </a>
+        <a href="https://lnkd.in/dahSzfeq" target="_blank">
+            <img src="{{ url_for('static', filename='images/badge2.png') }}" alt="Badge 2" class="badge-img me-2">
+        </a>
+        <a href="https://lnkd.in/dgcWhcVH" target="_blank">
+            <img src="{{ url_for('static', filename='images/badge3.png') }}" alt="Badge 3" class="badge-img">
+        </a>
+    </div>
 
     <!-- Call to Action -->
     <a href="{{ url_for('projects') }}" 
-       class="btn btn-outline-light btn-lg mt-3 hover-pop">
+       class="btn btn-outline-light btn-lg mt-3 hover-pop animate-fade">
         View My Projects
     </a>
 </section>
@@ -55,6 +61,24 @@
     padding-bottom: 2px;
 }
 
+/* Badge Images */
+.badges-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.badge-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.badge-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
 /* Animations */
 .animate-slide {
     opacity: 0;
@@ -64,7 +88,7 @@
 
 .animate-fade {
     opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
+    animation: fadeIn 1s ease forwards;
     animation-delay: 0.5s;
 }
 
@@ -79,29 +103,6 @@
     to {
         opacity: 1;
     }
-}
-
-/* Badges Section */
-.badges-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.badge-img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.badge-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 </style>
 {% endblock %}
