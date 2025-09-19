@@ -60,7 +60,7 @@ def cv():
 @app.route('/download-cv')
 def download_cv():
     # Make sure your CV PDF is placed in the 'static' folder
-    return send_from_directory(directory='static', path='Azola_Qakaqu_CV.pdf', as_attachment=True)
+    return send_from_directory(directory='static', path='Azola_Qakaqu_Resume.pdf', as_attachment=True)
 
 
 if __name__ == '__main__':
