@@ -51,5 +51,17 @@ def contact():
 
     return render_template('contact.html')
 
+# --- CV Route ---
+@app.route('/cv')
+def cv():
+    # Serve CV from the 'static' folder
+    return render_template('cv.html')  # A template with iframe and download button
+
+@app.route('/download-cv')
+def download_cv():
+    # Make sure your CV PDF is placed in the 'static' folder
+    return send_from_directory(directory='static', path='Azola_Qakaqu_CV.pdf', as_attachment=True)
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
